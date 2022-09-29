@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Jogo da Memória</string>
+    <string-array name="array_animais">
+        <item>BORBOLETA</item>
+        <item>CAVALO</item>
+        <item>DINOSSAURO</item>
+        <item>ELEFANTE</item>
+        <item>GALINHA</item>
+        <item>GATO</item>
+        <item>SERPENTE</item>
+        <item>TARTARUGA</item>
+        <item>TUBARAO</item>
+        <item>VACA</item>
+    </string-array>
+</resources>
