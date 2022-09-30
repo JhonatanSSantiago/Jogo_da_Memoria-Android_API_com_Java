@@ -35,6 +35,7 @@ public class JogoActivity extends AppCompatActivity {
     private int vezes = 0;
     private ImageView img;
     private int numAnimal;
+    private String nomeAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +57,8 @@ public class JogoActivity extends AppCompatActivity {
                                 gerarAnimal();
                                 gerarImagens();
                              //   mostraTela();
-                            animalQtd.setText("Animal Nº "+vezes);
+                            animalQtd.setText("Animal Nº "+vezes+ " - "  + nomeAnimal);
                            // Toast.makeText(getApplicationContext(), "numero:" +numeroGerado, Toast.LENGTH_SHORT).show();
-                            if(vezes==10){
-                                Intent it = new Intent(getApplicationContext(), RespostasActivity.class);
-                                startActivity(it);
-                            }
                         }
                     });
                     try {
@@ -72,6 +69,8 @@ public class JogoActivity extends AppCompatActivity {
                     }
 
                 }
+                Intent it = new Intent(getApplicationContext(), RespostasActivity.class);
+                startActivity(it);
             }
         }).start();
 
@@ -86,42 +85,52 @@ public class JogoActivity extends AppCompatActivity {
         if(numAnimal == 0){
             Drawable d = getDrawable(R.drawable.borboleta);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(0).toString();
         }
         if(numAnimal == 1){
             Drawable d = getDrawable(R.drawable.cavalo);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(1).toString();
         }
         if(numAnimal == 2){
             Drawable d = getDrawable(R.drawable.dinossauro);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(2).toString();
         }
         if(numAnimal == 3){
             Drawable d = getDrawable(R.drawable.elefante);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(3).toString();
         }
         if(numAnimal == 4){
             Drawable d = getDrawable(R.drawable.galinha);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(4).toString();
         }
         if(numAnimal == 5){
             Drawable d = getDrawable(R.drawable.gato);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(5).toString();
         }
         if(numAnimal == 6){
             Drawable d = getDrawable(R.drawable.serpente);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(6).toString();
         }
         if(numAnimal == 7){
             Drawable d = getDrawable(R.drawable.tartaruga_marinha);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(7).toString();
         }
         if(numAnimal == 8){
             Drawable d = getDrawable(R.drawable.tubarao);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(8).toString();
         }
         if(numAnimal == 9){
             Drawable d = getDrawable(R.drawable.vaca);
             img.setImageDrawable(d);
+            nomeAnimal = lista_nome_animais.get(9).toString();
         }
     }
 
