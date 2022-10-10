@@ -20,22 +20,22 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class JogoActivity extends AppCompatActivity {
-    private ListView listView;
+//    private ListView listView;
     private TextView animalQtd;
-    private ArrayList<Animal> arrayAnimais = new ArrayList<>();
+  //  private ArrayList<Animal> arrayAnimais = new ArrayList<>();
     private ArrayList<String> lista_nome_animais;
+    private ArrayList<String> ordem_sorteada = new ArrayList<>();
     private ArrayList<Animal> animal = new ArrayList<>();
-    private ArrayList<Animal> arrayVazio = new ArrayList<>();
     private int numeroGerado;
     private ArrayList<Integer> arrayNumerosGerados= new ArrayList<>();
-    private Animal a;
-    private MyAdapter myAdapter;
+//    private Animal a;
+ //   private MyAdapter myAdapter;
     private Handler handler = new Handler();
     private int cont = 0;
     private int vezes = 0;
     private ImageView img;
     private int numAnimal;
-    private String nomeAnimal;
+    private String nomeAnimal, nome, ano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,11 @@ public class JogoActivity extends AppCompatActivity {
         img=findViewById(R.id.img);
         animalQtd=findViewById(R.id.animalQtd);
         preencherListaNomeAnimais();
-        criarListaAnimais();
+       // criarListaAnimais();
+
+        Intent it1 = getIntent();
+        nome = it1.getStringExtra("nome");
+        ano = it1.getStringExtra("ano");
 
         new Thread(new Runnable() {
             public void run() {
@@ -63,13 +67,16 @@ public class JogoActivity extends AppCompatActivity {
                     });
                     try {
                         // Sleep for 200 milliseconds.
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
 
                 }
                 Intent it = new Intent(getApplicationContext(), RespostasActivity.class);
+                it.putStringArrayListExtra("ordemSorteio", ordem_sorteada);
+                it.putExtra("nome", nome);
+                it.putExtra("ano", ano);
                 startActivity(it);
             }
         }).start();
@@ -86,51 +93,61 @@ public class JogoActivity extends AppCompatActivity {
             Drawable d = getDrawable(R.drawable.borboleta);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(0).toString();
+            ordem_sorteada.add(lista_nome_animais.get(0).toString());
         }
         if(numAnimal == 1){
             Drawable d = getDrawable(R.drawable.cavalo);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(1).toString();
+            ordem_sorteada.add(lista_nome_animais.get(1).toString());
         }
         if(numAnimal == 2){
             Drawable d = getDrawable(R.drawable.dinossauro);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(2).toString();
+            ordem_sorteada.add(lista_nome_animais.get(2).toString());
         }
         if(numAnimal == 3){
             Drawable d = getDrawable(R.drawable.elefante);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(3).toString();
+            ordem_sorteada.add(lista_nome_animais.get(3).toString());
         }
         if(numAnimal == 4){
             Drawable d = getDrawable(R.drawable.galinha);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(4).toString();
+            ordem_sorteada.add(lista_nome_animais.get(4).toString());
         }
         if(numAnimal == 5){
             Drawable d = getDrawable(R.drawable.gato);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(5).toString();
+            ordem_sorteada.add(lista_nome_animais.get(5).toString());
         }
         if(numAnimal == 6){
             Drawable d = getDrawable(R.drawable.serpente);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(6).toString();
+            ordem_sorteada.add(lista_nome_animais.get(6).toString());
         }
         if(numAnimal == 7){
             Drawable d = getDrawable(R.drawable.tartaruga_marinha);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(7).toString();
+            ordem_sorteada.add(lista_nome_animais.get(7).toString());
         }
         if(numAnimal == 8){
             Drawable d = getDrawable(R.drawable.tubarao);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(8).toString();
+            ordem_sorteada.add(lista_nome_animais.get(8).toString());
         }
         if(numAnimal == 9){
             Drawable d = getDrawable(R.drawable.vaca);
             img.setImageDrawable(d);
             nomeAnimal = lista_nome_animais.get(9).toString();
+            ordem_sorteada.add(lista_nome_animais.get(9).toString());
         }
     }
 
@@ -145,14 +162,14 @@ public class JogoActivity extends AppCompatActivity {
     }
 
     private void gerarAnimal(){
-        animal.add(arrayAnimais.get(numeroGerado));
+    //    animal.add(arrayAnimais.get(numeroGerado));
         numAnimal = numeroGerado;
     }
 
     private void preencherListaNomeAnimais(){
         lista_nome_animais = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.array_animais)));
     }
-
+/*
     public void criarListaAnimais() {
         Animal borboleta = new Animal(R.drawable.borboleta, lista_nome_animais.get(0).toString());
         Animal cavalo = new Animal(R.drawable.cavalo, lista_nome_animais.get(1).toString());
@@ -175,5 +192,5 @@ public class JogoActivity extends AppCompatActivity {
         arrayAnimais.add(tartaruga);
         arrayAnimais.add(tubarao);
         arrayAnimais.add(vaca);
-    }
+    } */
 }

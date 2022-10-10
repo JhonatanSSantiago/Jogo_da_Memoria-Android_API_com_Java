@@ -7,4 +7,111 @@
     android:orientation="vertical"
     tools:context=".RespostasActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Qual a ordem dos animais?"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:indeterminate="false"
+        android:max="100"
+        android:minWidth="200dp"
+        android:minHeight="20dp"
+        android:visibility="invisible"
+        android:progress="1"
+        android:id="@+id/progressbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/lista">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="1 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="2 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal2"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="3 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal3"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="4 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal4"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="5 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal5"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="6 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal6"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="7 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal7"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="8 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal8"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="9 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal9"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="10 - Animal"
+            android:gravity="center"
+            android:id="@+id/animal10"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificar"
+        android:gravity="center"
+        android:id="@+id/verificar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="resultado"
+        android:id="@+id/resultado"/>
+
 </LinearLayout>
